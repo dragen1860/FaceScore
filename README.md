@@ -1,7 +1,7 @@
 #Face Score System
 
 ##How to build
-- please refer to [https://github.com/ci2cv/face-analysis-sdk] for more details
+- please refer to [face-analysis-sdk](https://github.com/ci2cv/face-analysis-sdk) for more details
 ```shell
 cd build
 cmake ..
