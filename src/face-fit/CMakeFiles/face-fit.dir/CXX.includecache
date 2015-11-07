@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/i/ml/face-analysis-sdk/src/face-fit/main.cpp
+utils/helpers.hpp
+/home/i/ml/face-analysis-sdk/src/face-fit/utils/helpers.hpp
+utils/command-line-arguments.hpp
+/home/i/ml/face-analysis-sdk/src/face-fit/utils/command-line-arguments.hpp
+utils/points.hpp
+/home/i/ml/face-analysis-sdk/src/face-fit/utils/points.hpp
+tracker/FaceTracker.hpp
+/home/i/ml/face-analysis-sdk/src/face-fit/tracker/FaceTracker.hpp
+opencv2/highgui/highgui.hpp
+-
+
