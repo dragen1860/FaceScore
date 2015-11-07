@@ -66,7 +66,7 @@ INCLUDE_DIRECTORIES("${CMAKE_CURRENT_BINARY_DIR}/src/")
 # Subdirectories with CMakeLists.txt
 ADD_SUBDIRECTORY(src/utils)
 ADD_SUBDIRECTORY(src/tracker) 
-ADD_SUBDIRECTORY(src/face-fit) 
+ADD_SUBDIRECTORY(src/score) 
 
 IF(WITH_GUI)
   SET(CPACK_PACKAGE_NAME "clm")

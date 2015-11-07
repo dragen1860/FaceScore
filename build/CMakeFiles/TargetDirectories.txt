@@ -1,0 +1,3 @@
+/home/i/facescore/build/src/tracker/CMakeFiles/clmTracker.dir
+/home/i/facescore/build/src/score/CMakeFiles/score.dir
+/home/i/facescore/build/src/utils/CMakeFiles/utilities.dir
