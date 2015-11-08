@@ -7,6 +7,7 @@ the application requires the following library to be installed at first:
 - FFMPEG version 1.0.0 or above.
 - Bash
 - Qt version 4.7 or above (only required if building the GUI)
+
 please refer to [face-analysis-sdk](https://github.com/ci2cv/face-analysis-sdk) for more details
 preparing your operating system environment and 
 ```shell
