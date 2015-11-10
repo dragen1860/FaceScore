@@ -45,7 +45,7 @@ struct Configuration
 };
 
 
-int detect_face(const Configuration &cfg, const std::string name);
+int detect_face(std::string name);
 double distance(cv::Point2d a, cv::Point2d b);
 double score(const std::vector<cv::Point_<double> >& data);
 cv::Mat compute_pose_image(const Pose &pose, int height, int width);
@@ -53,35 +53,52 @@ void display_data(const Configuration &cfg,
        const cv::Mat &image,
        const std::vector<cv::Point_<double> > &points,
        const Pose &pose,
-       const std::string name);
+       const std::string name); 
+
  
 
 int main(int argc, char **argv)
 { 
+    // Configuration cfg;
+    //    cfg.wait_time = 0;
+    //   cfg.model_pathname = DefaultFaceTrackerModelPathname();
+    //   cfg.params_pathname = DefaultFaceTrackerParamsPathname();
+    //   cfg.tracking_threshold = 5;
+    //   cfg.window_title = "Face Landmark";
+    //   cfg.verbose = false;
+    //   cfg.circle_radius = 3;
+    //   cfg.circle_thickness = 2;
+    //   cfg.circle_linetype = 8;
+    //   cfg.circle_shift = 0;  
+    //   cfg.save_3d_points = false; 
 
-  Configuration cfg;
-  cfg.wait_time = 0;
-  cfg.model_pathname = DefaultFaceTrackerModelPathname();
-  cfg.params_pathname = DefaultFaceTrackerParamsPathname();
-  cfg.tracking_threshold = 5;
-  cfg.window_title = "Face Landmark";
-  cfg.verbose = false;
-  cfg.circle_radius = 3;
-  cfg.circle_thickness = 2;
-  cfg.circle_linetype = 8;
-  cfg.circle_shift = 0;  
-  cfg.save_3d_points = false;   
-   
-  int res=detect_face(cfg, "bb.jpg");       
- 
+    // detect_face(cfg,"bb.jpg");
+
+  std::cout<<detect_face("bb.jpg")<<std::endl;
+
   return 0;
 } 
 
 
 
 
-int detect_face(const Configuration &cfg, const std::string name)
+int detect_face(std::string name)
 {  
+    Configuration cfg;
+    cfg.wait_time = 0;
+    cfg.model_pathname = DefaultFaceTrackerModelPathname();
+    cfg.params_pathname = DefaultFaceTrackerParamsPathname();
+    std::cout<<cfg.model_pathname<<" "<<cfg.params_pathname<<std::endl;
+    
+    cfg.tracking_threshold = 5;
+    cfg.window_title = "Face Landmark";
+    cfg.verbose = false;
+    cfg.circle_radius = 3;
+    cfg.circle_thickness = 2;
+    cfg.circle_linetype = 8;
+    cfg.circle_shift = 0;  
+    cfg.save_3d_points = false; 
+
     FaceTracker * tracker = LoadFaceTracker(cfg.model_pathname.c_str());
     FaceTrackerParams *tracker_params  = LoadFaceTrackerParams(cfg.params_pathname.c_str());
 
@@ -109,8 +126,8 @@ int detect_face(const Configuration &cfg, const std::string name)
       std::cout<<i++<<" : "<<point.x<<","<<point.y<<std::endl;
     }
 
-
-    std::cout<<"score: "<<score(shape)<<std::endl;
+    result=score(shape);
+    std::cout<<"score: "<<result<<std::endl;
     std::string path(name.c_str());
     std::string save_name=path.substr(0,path.find('.'));
     save_name+="2.jpg"; 
@@ -121,7 +138,7 @@ int detect_face(const Configuration &cfg, const std::string name)
     delete tracker;
     delete tracker_params; 
     
-    return 0;
+    return result;
 }
 
  

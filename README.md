@@ -13,12 +13,13 @@ please refer to [face-analysis-sdk](https://github.com/ci2cv/face-analysis-sdk) 
 preparing your operating system environment and 
 ```shell
 cd build
+rm -rf *
 cmake ..
 make
 ```
 after that, just copy some images from computer to build directory and 
 ```shell
-face-fit test.jpg
+./score
 ```
 and enjoy!
 
