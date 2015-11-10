@@ -12,6 +12,7 @@ please refer to [face-analysis-sdk](https://github.com/ci2cv/face-analysis-sdk) 
 
 preparing your operating system environment and 
 ```shell
+mkdir build
 cd build
 rm -rf *
 cmake ..
